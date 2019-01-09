@@ -1,6 +1,62 @@
-#easy_admin:
-#    entities:
-#        # List the entity class name you want to manage
-#        - App\Entity\Product
+easy_admin:
+    site_name: 'Sama API Admin'
+    list:
+        title: 'list.%%entity_label%%'
+        max_results: 30
+
+    show:
+        title: '%%entity_label%% (#%%entity_id%%)'
+        max_results: 20
+
+    design:
+      brand_color: 'red'
+      assets:
+        favicon: '/assets/backend/favicon.png'
+        css:
+          - 'bundles/app/css/admin5.css'
+        js:
+          - 'bundles/app/js/admin5.js'
+    entities:
+        # List the entity class name you want to manage
+        Article:
+            class: App\Entity\Article
+            help: 'Global message displayed in all views'
+            label: 'Article'
+
+            list:
+                title: '%%entity_label%% récent'
+                help: 'The list view overrides the global help message'
+                max_results: 10
+                fields:
+                  - { property: 'id'}
+                  - { property: 'Titre_Article', label: 'Titre' }
+                  - { property: 'Image', label: 'Image', type: 'image', base_path: '%app.path.article_images%' }
+                  - { property: 'Descriptif', label: 'Description' }
+                  - { property: 'Article', label: 'Article' }
+                  - { property: 'Date', label: 'Publié le' }
+                  - { property: 'Categorie', label: 'Catégorie' }
+                  - { property: 'Auteur', label: 'Auteur' }
+
+            show:
+                fields:
+                - { property: 'Image', label: 'Image', type: 'image', base_path: '%app.path.article_images%' }
+                max_results: 5
+
+            search:
+                help: null
+                fields: 
+                  - { property: 'Titre_Article' }
+                  - { property: 'Auteur' }
+                  - { property: 'Categorie' }
+            form:
+                fields:
+                  - { property: 'Titre_Article' }
+                  - { property: 'Image', type: 'text', base_path: '%app.path.article_images%' }
+                  - { property: 'Descriptif' }
+                  - { property: 'Article'}
+                  - { property: 'Date' }
+                  - { property: 'Categorie' }
+                  - { property: 'Auteur' }
+
 #        - App\Entity\Category
 #        - App\Entity\User
