@@ -20,12 +20,12 @@ easy_admin:
         # List the entity class name you want to manage
         Article:
             class: App\Entity\Article
-            help: 'Global message displayed in all views'
+            help: 'Veuillez renseigner tous les champs pour editer votre article'
             label: 'Article'
 
             list:
                 title: '%%entity_label%% récent'
-                help: 'The list view overrides the global help message'
+                help: 'La liste de tous les articles publiés'
                 max_results: 10
                 fields:
                   - { property: 'id'}
