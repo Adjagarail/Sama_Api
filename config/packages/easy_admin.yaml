@@ -57,6 +57,33 @@ easy_admin:
                   - { property: 'Date' }
                   - { property: 'Categorie' }
                   - { property: 'Auteur' }
+        Competence:
+            class: App\Entity\Competence
+            help: 'Veuillez renseigner tous les champs pour editer vos competences'
+            label: 'Compétence'
+
+            list:
+                title: '%%entity_label%% récent'
+                help: 'La liste de tous vos competences'
+                max_results: 10
+                fields:
+                  - { property: 'id'}
+                  - { property: 'Image', type: 'image', base_path: '%app.path.article%' }
+                  - { property: 'Titre'}
+            show:
+                fields:
+                - { property: 'Image', type: 'image', base_path: '%app.path.article%' }
+                max_results: 5
+
+            search:
+                help: null
+                fields: 
+                  - { property: 'Titre' }
+
+            form:
+                fields:
+                  - { property: 'imageFile', type: 'file' }
+                  - { property: 'Titre' }
         User:
             class: App\Entity\User
 #        - App\Entity\Category
