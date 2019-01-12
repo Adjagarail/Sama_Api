@@ -57,6 +57,7 @@ easy_admin:
                   - { property: 'Date' }
                   - { property: 'Categorie' }
                   - { property: 'Auteur' }
-
+        User:
+            class: App\Entity\User
 #        - App\Entity\Category
 #        - App\Entity\User
