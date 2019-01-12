@@ -30,7 +30,7 @@ easy_admin:
                 fields:
                   - { property: 'id'}
                   - { property: 'Titre_Article', label: 'Titre' }
-                  - { property: 'Image', label: 'Image', type: 'image', base_path: '%app.path.article_images%' }
+                  - { property: 'Image', type: 'image', base_path: '%app.path.article%'}
                   - { property: 'Descriptif', label: 'Description' }
                   - { property: 'Article', label: 'Article' }
                   - { property: 'Date', label: 'Publié le' }
@@ -39,7 +39,7 @@ easy_admin:
 
             show:
                 fields:
-                - { property: 'Image', label: 'Image', type: 'image', base_path: '%app.path.article_images%' }
+                - { property: 'Image', label: 'Image', type: 'image', base_path: '%app.path.article%' }
                 max_results: 5
 
             search:
@@ -51,7 +51,7 @@ easy_admin:
             form:
                 fields:
                   - { property: 'Titre_Article' }
-                  - { property: 'Image', type: 'text', base_path: '%app.path.article_images%' }
+                  - { property: 'imageFile', type: 'file' }
                   - { property: 'Descriptif' }
                   - { property: 'Article'}
                   - { property: 'Date' }
