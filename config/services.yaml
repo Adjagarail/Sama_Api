@@ -6,6 +6,7 @@
 parameters:
     locale: 'fr'
     app.path.article: /uploads/images/Article
+    app.path.perso: /uploads/images/Perso
 
 services:
     # default configuration for services in *this* file

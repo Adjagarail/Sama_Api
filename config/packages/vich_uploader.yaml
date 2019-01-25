@@ -5,3 +5,6 @@ vich_uploader:
         article:
             uri_prefix: '%app.path.article%'
             upload_destination: '%kernel.project_dir%/public%app.path.article%'
+        perso:
+            uri_prefix: '%app.path.perso%'
+            upload_destination: '%kernel.project_dir%/public%app.path.perso%'

@@ -48,7 +48,7 @@ class Competence
         return $this->Image;
     }
     
-     public function getImageFile()
+    public function getImageFile()
     {
         return $this->imageFile;
     }

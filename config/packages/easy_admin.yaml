@@ -84,6 +84,45 @@ easy_admin:
                 fields:
                   - { property: 'imageFile', type: 'file' }
                   - { property: 'Titre' }
+
+        Perso:
+            class: App\Entity\Perso
+            help: 'Veuillez renseigner tous les champs pour editer vos informations personnelle'
+            label: 'Infos Personnelle'
+
+            list:
+                title: '%%entity_label%% récent'
+                help: 'La liste de tous vos informations personnelle'
+                max_results: 10
+                fields:
+                  - { property: 'id'}
+                  - { property: 'Photo', type: 'image', base_path: '%app.path.perso%' }
+                  - { property: 'Prenom'}
+                  - { property: 'Nom'}
+                  - { property: 'Contact'}
+                  - { property: 'Email'}
+            show:
+                fields:
+                - { property: 'Photo', type: 'image', base_path: '%app.path.perso%' }
+                max_results: 5
+
+            search:
+                help: null
+                fields: 
+                  - { property: 'Prenom' }
+                  - { property: 'Nom' }
+
+            form:
+                fields:
+                  - { property: 'Prenom' }
+                  - { property: 'Nom' }
+                  - { property: 'Contact' }
+                  - { property: 'Email' }
+                  - { property: 'imageFile', type: 'file' }
+      
+        Projet:
+            class: App\Entity\Projet
+            
         User:
             class: App\Entity\User
 #        - App\Entity\Category
