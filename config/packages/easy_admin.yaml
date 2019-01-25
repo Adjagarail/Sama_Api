@@ -122,7 +122,50 @@ easy_admin:
       
         Projet:
             class: App\Entity\Projet
-            
+            help: 'Veuillez renseigner tous les champs pour editer vos Projets'
+            label: 'Mes Projets'
+
+            list:
+                title: '%%entity_label%% réçent'
+                help: 'La liste de tous vos projets reçents'
+                max_results: 10
+                fields:
+                  - { property: 'id'}
+                  - { property: 'Titre'}
+                  - { property: 'Image', type: 'image', base_path: '%app.path.perso%' }
+                  - { property: 'Description'}
+                  - { property: 'Technologie'}
+                  - { property: 'Date'}
+                  - { property: 'Equipe'}
+                  - { property: 'TafPerso'}
+            show:
+                fields:
+                  - { property: 'id'}
+                  - { property: 'Titre'}
+                  - { property: 'Image', type: 'image', base_path: '%app.path.perso%' }
+                  - { property: 'Description'}
+                  - { property: 'Technologie'}
+                  - { property: 'Date'}
+                  - { property: 'Equipe'}
+                  - { property: 'TafPerso'}
+                max_results: 5
+
+            search:
+                help: null
+                fields: 
+                  - { property: 'Titre' }
+                  - { property: 'Technologie' }
+
+            form:
+                fields:
+                  - { property: 'Titre'}
+                  - { property: 'imageFile', type: 'file' }
+                  - { property: 'Description'}
+                  - { property: 'Technologie'}
+                  - { property: 'Date'}
+                  - { property: 'Equipe'}
+                  - { property: 'TafPerso'}
+
         User:
             class: App\Entity\User
 #        - App\Entity\Category
